@@ -42,7 +42,7 @@ const Login = ({ classes }) => {
         Welcome
       </Typography>
       <GoogleLogin
-        clientId="117618048379-qrbari92bu5gvkb5d5pertsrshccff6m.apps.googleusercontent.com"
+        clientId="202369221071-gl9umlgf9ad4f71ug0pv000jltc4d6sp.apps.googleusercontent.com"
         onSuccess={onSuccess}
         onFailure={onFailure}
         isSignedIn={true}

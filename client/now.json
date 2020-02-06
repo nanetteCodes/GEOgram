@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "GeoPins",
+  "name": "geoDiary",
   "builds": [
     {
       "src": "package.json",
