@@ -224,7 +224,7 @@ const styles = {
   },
   navigationControl: {
     position: "absolute",
-    top: 0,
+    top: "50px",
     left: 0,
     margin: "1em"
   },

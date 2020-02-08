@@ -8,6 +8,9 @@ import Context from "../../context";
 import { ME_QUERY } from "../../graphql/queries";
 import { BASE_URL } from "../../client";
 
+
+import logoWhite from '../../geogram-white.png';
+
 const Login = ({ classes }) => {
   const { dispatch } = useContext(Context);
 
@@ -32,22 +35,14 @@ const Login = ({ classes }) => {
 
   return (
     <div className={classes.root}>
-      <Typography
-        component="h1"
-        variant="h3"
-        gutterBottom
-        noWrap
-        style={{ color: "rgb(66, 133, 244)" }}
-      >
-        Welcome
-      </Typography>
+      <img src={logoWhite} alt="logo" className={classes.logo} />
       <GoogleLogin
         clientId="202369221071-gl9umlgf9ad4f71ug0pv000jltc4d6sp.apps.googleusercontent.com"
         onSuccess={onSuccess}
         onFailure={onFailure}
         isSignedIn={true}
         buttonText="Login with Google"
-        theme="dark"
+
       />
     </div>
   );
@@ -59,7 +54,14 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundImage: "url('https://media.giphy.com/media/USnFbGDuw2yRbS7g2S/giphy.gif')",
+    backgroundSize: "cover",
+    padding: 0,
+    margin: 0
+  },
+  logo: {
+    width: "500px"
   }
 };
 
