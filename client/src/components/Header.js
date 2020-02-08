@@ -1,36 +1,42 @@
 import React, { useContext } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import MapIcon from "@material-ui/icons/Map";
-import Typography from "@material-ui/core/Typography";
 import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
+import Drawer from "@material-ui/core/Drawer";
+import Fab from "@material-ui/core/Fab";
+import List from "@material-ui/core/List";
+import Divider from "@material-ui/core/Divider";
+import ListItem from "@material-ui/core/ListItem";
+import Typography from "@material-ui/core/Typography";
+import MenuIcon from "@material-ui/icons/Menu";
 
 import Context from "../context";
 import Signout from "../components/Auth/Signout";
 
 const Header = ({ classes }) => {
-  const mobileSize = useMediaQuery("(max-width: 650px)");
+  const [sidez, setSidez] = React.useState({ left: false });
   const { state } = useContext(Context);
   const { currentUser } = state;
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          {/* Title / Logo */}
-          <div className={classes.grow}>
-            <MapIcon className={classes.icon} />
-            <Typography
-              className={mobileSize ? classes.mobile : ""}
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-            >
-              GeoDiary
-            </Typography>
-          </div>
+  const mobileSize = useMediaQuery("(max-width: 650px)");
 
+  const toggleDrawer = (side, open) => event => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setSidez({ ...sidez, [side]: open });
+  };
+
+  const sideList = side => (
+    <div
+      className={classes.list}
+      role="presentation"
+      onClick={toggleDrawer(side, false)}
+      onKeyDown={toggleDrawer(side, false)}
+    >
+      <List>
+        <ListItem button key={"name"}>
           {/* Current User Info */}
           {currentUser && (
             <div className={classes.grow}>
@@ -49,16 +55,46 @@ const Header = ({ classes }) => {
               </Typography>
             </div>
           )}
-
-          {/* Signout Button */}
-          <Signout />
-        </Toolbar>
-      </AppBar>
+        </ListItem>
+      </List>
+      <Divider />
+      {/* Signout Button */}
+      <Signout />
     </div>
+  );
+
+  return (
+    <>
+      <Fab
+        edge="start"
+        className={classes.menuFab}
+        color="inherit"
+        aria-label="menu"
+        aria-haspopup="true"
+        onClick={toggleDrawer("left", true)}
+      >
+        <MenuIcon />
+      </Fab>
+      <Drawer open={sidez.left} onClose={toggleDrawer("left", false)}>
+        {sideList("left")}
+      </Drawer>
+    </>
   );
 };
 
 const styles = theme => ({
+  list: {
+    width: 250
+  },
+  menuFab: {
+    position: "absolute",
+    zIndex: 2,
+    width: "40px",
+    height: "40px",
+    top: "12px",
+    left: "11px",
+    background: "white"
+  },
   root: {
     flexGrow: 1
   },

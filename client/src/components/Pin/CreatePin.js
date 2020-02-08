@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import AddAPhotoIcon from "@material-ui/icons/AddAPhotoTwoTone";
-import LandscapeIcon from "@material-ui/icons/LandscapeOutlined";
+import LocationCityIcon from '@material-ui/icons/LocationCity';
 import ClearIcon from "@material-ui/icons/Clear";
 import SaveIcon from "@material-ui/icons/SaveTwoTone";
 import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
@@ -63,9 +63,9 @@ const CreatePin = ({ classes }) => {
         className={classes.alignCenter}
         component="h2"
         variant="h4"
-        color="secondary"
+        color="primary"
       >
-        <LandscapeIcon className={classes.iconLarge} /> Pin Location
+        <LocationCityIcon className={classes.iconLarge} /> Pin Location
       </Typography>
       <div>
         <TextField
@@ -153,6 +153,7 @@ const styles = theme => ({
   iconLarge: {
     fontSize: 40,
     marginRight: theme.spacing.unit
+    
   },
   leftIcon: {
     fontSize: 20,
