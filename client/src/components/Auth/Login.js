@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { GraphQLClient } from "graphql-request";
 import { GoogleLogin } from "react-google-login";
 import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 
 import Context from "../../context";
 import { ME_QUERY } from "../../graphql/queries";
@@ -55,7 +54,7 @@ const styles = {
     justifyContent: "center",
     flexDirection: "column",
     alignItems: "center",
-    backgroundImage: "url('https://media.giphy.com/media/USnFbGDuw2yRbS7g2S/giphy.gif')",
+    backgroundImage: "url('https://media.giphy.com/media/41SIOpeqCfIru/giphy.gif')",
     backgroundSize: "cover",
     padding: 0,
     margin: 0
