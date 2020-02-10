@@ -7,7 +7,7 @@ const resolvers = require("./resolvers");
 const { findOrCreateUser } = require("./controllers/userController");
 
 mongoose
-  .connect(process.env.MONGO_URI, { 
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(() => console.log("DB connected!"))
@@ -30,7 +30,7 @@ const server = new ApolloServer({
     return { currentUser };
   }
 });
-
+// for production env
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`Server listening on ${url}`);
 });
