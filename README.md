@@ -29,7 +29,10 @@
 - cd client
 - npm run build
 
-### Deploy to Heroku and github
+### Deploy to backend to Heroku and code to github
 
-- git push heroku master
-- git push origin master
+- git push heroku master && git push origin master
+
+### Deploy client to now
+
+- run: now from/client
