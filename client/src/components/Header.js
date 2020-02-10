@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
 import Drawer from "@material-ui/core/Drawer";
 import Fab from "@material-ui/core/Fab";
 import List from "@material-ui/core/List";
@@ -16,7 +15,6 @@ const Header = ({ classes }) => {
   const [sidez, setSidez] = React.useState({ left: false });
   const { state } = useContext(Context);
   const { currentUser } = state;
-  const mobileSize = useMediaQuery("(max-width: 650px)");
 
   const toggleDrawer = (side, open) => event => {
     if (
@@ -46,10 +44,10 @@ const Header = ({ classes }) => {
                 alt={currentUser.name}
               />
               <Typography
-                className={mobileSize ? classes.mobile : ""}
-                variant="h5"
+                variant="h6"
                 color="inherit"
                 noWrap
+                className={classes.userName}
               >
                 {currentUser.name}
               </Typography>
@@ -115,6 +113,9 @@ const styles = theme => ({
     height: "50px",
     borderRadius: "90%",
     marginRight: theme.spacing.unit * 2
+  },
+  userName: {
+    fontSize: "18px"
   }
 });
 
