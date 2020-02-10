@@ -5,4 +5,4 @@ _This site can be viewed [HERE](https://geogram.now.sh)_
 ***_- Technologies Leveraged: React, Redux, Context API, GraphQL, Apollo, MongoDB, Express.js & Material UI_***
 
 ### Quick Start
-###### quick start info can be found in quickstart.md
+###### quick start info can be found in [quickstart.md](https://github.com/nanetteCodes/GEOgram/blob/master/quickstart.md)
