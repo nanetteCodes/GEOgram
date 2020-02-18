@@ -4,29 +4,32 @@
 - in root of project and add env variables
 
   - "OAUTH_CLIENT_ID": "id"
-  - "mongoURI": "mongodb://localhost/dev-social",
+  - "mongoURI": "mongodb://localhost/mongo-test",
 
 #### Install server dependencies
 
-- npm install
+- in root
+  - `npm install`
 
 #### Install client dependencies
 
 - cd client
-- npm install
+  - `npm install`
 
 #### Run Express from root
 
-- npm run dev
+- `npm run dev`
+-view at: http://localhost:4000/
 
 #### Run Client from /client
 
-- npm start
+- `npm start`
+- view at: http://localhost:3000/
 
 #### Deploy to backend to Heroku and code to github
 
-- git push heroku master && git push origin master
+- `git push heroku master && git push origin master`
 
 #### Deploy client to now
 
-- run: now from/client
+- From client run: `now` 

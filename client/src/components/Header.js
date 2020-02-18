@@ -98,7 +98,6 @@ const styles = theme => ({
   },
   grow: {
     flexGrow: 1,
-    display: "flex",
     alignItems: "center"
   },
   icon: {
@@ -112,10 +111,13 @@ const styles = theme => ({
   picture: {
     height: "50px",
     borderRadius: "90%",
-    marginRight: theme.spacing.unit * 2
+    margin: "0 auto",
+    display: "block"
   },
   userName: {
-    fontSize: "18px"
+    fontSize: "18px",
+    display: "block",
+    textAlign: "center"
   }
 });
 
